@@ -2,6 +2,7 @@ import { useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle } from 'react-icons/io'
+import { ClipboardCopyButton } from './ClipboardCopyButton'
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>('')
@@ -11,11 +12,12 @@ export const MarkdownEditor: React.VFC = () => {
 				<div className="flex flex-1 max-w-5xl px-4 py-6 m-3 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
 					<TextareaAutosize
-						className="w-full pt-1 ml-3 text-xl outline-none bg-navy-light text-while placeholder-gray-light"
+						className="w-full pt-1 mx-3 text-xl outline-none bg-navy-light text-while placeholder-gray-light"
 						placeholder="Message"
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
 					/>
+					<ClipboardCopyButton message={message} />
 				</div>
 				<div className="flex-1 max-w-5xl m-3">
 					<div className="flex p-4 rounded-lg bg-navy-light text-while ">
