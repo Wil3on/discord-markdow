@@ -3,6 +3,7 @@ import TextareaAutosize from 'react-textarea-autosize'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
+import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>('')
@@ -27,7 +28,9 @@ export const MarkdownEditor: React.VFC = () => {
 								you
 								<span className="ml-2 text-sm text-gray-light">Today at 11:30 PM</span>
 							</h4>
-							<p className="text-xl whitespace-pre-line">{message}</p>
+							<p className="text-xl whitespace-pre-line">
+								<DiscordMarkdownParser message={message} />
+							</p>
 						</div>
 					</div>
 				</div>
