@@ -4,7 +4,10 @@ module.exports = {
 	theme: {
 		colors: {
 			while: '#fff',
-			dark: '#2F3136',
+			dark: {
+				DEFAULT: '#292B30',
+				light: '#2F3136',
+			},
 			gray: {
 				DEFAULT: '#C4C4C4',
 				light: '#686B74',
