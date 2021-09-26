@@ -24,7 +24,7 @@ export const ClipboardCopyButton: React.VFC<ClipboardCopyButtonProps> = ({ messa
 	return (
 		<button
 			onClick={() => handleClipboardCopy(message)}
-			className={`relative px-1 py-1 border-2 rounded ${
+			className={`h-content relative px-1 py-1 border-2 rounded ${
 				isClicked ? 'border-green' : 'border-gray-light'
 			} hover:bg-gray-light max-h-content`}
 			disabled={isClicked}
