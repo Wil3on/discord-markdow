@@ -13,9 +13,13 @@ const convertDiscordMarkdown = (message: string) => {
 		.replace(/\_(.*)\_/gim, '<i>$1</i>') // italic text_2
 		.replace(/\~\~(.*)\~\~/gim, '<del>$1</del>') // strikethrough
 		.replace(
+			/^\>\>\>((.|\n)*)/gim,
+			'<backquote className="inline-block pl-2 border-l-4 border-gray-light">$1</backquote>'
+		) // multi-line blockquote
+		.replace(
 			/^\>(.*$)/gim,
 			'<backquote className="inline-block pl-2 border-l-4 border-gray-light">$1</backquote>'
-		) // blockquote
+		) // single-line blockquote
 	return markdownedMessage
 }
 
