@@ -8,7 +8,7 @@ import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>('')
 	return (
-		<section className="bg-navy">
+		<section className="mx-auto md:max-w-screen-xl bg-navy">
 			<div className="flex flex-col justify-center md:flex-row">
 				<div className="flex flex-1 max-w-5xl px-4 py-6 m-3 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
