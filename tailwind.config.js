@@ -3,6 +3,7 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		colors: {
+			blue: '#7289da',
 			while: '#fff',
 			dark: {
 				DEFAULT: '#292B30',
@@ -17,7 +18,6 @@ module.exports = {
 				DEFAULT: '#36393F',
 				light: '#40444C',
 			},
-			green: 'green',
 		},
 		extend: {
 			height: {
