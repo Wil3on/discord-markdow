@@ -5,8 +5,26 @@ import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 
+const defaultMessage: string = `1. *italics*
+2. **bold**
+3. ***bold italics***
+4. __underline__
+5. __*underline italics*__
+6. __**underline bold**__
+7. __***underline bold italics***__
+8. ~~Strikethrough~~
+9. \`one-line code blocks\`
+10. 
+\`\`\`multiline
+code blocks\`\`\`
+11. 
+> single-line blockquote
+12. 
+>>> multiline
+blockquotes`
+
 export const MarkdownEditor: React.VFC = () => {
-	const [message, setMessage] = useState<string>('')
+	const [message, setMessage] = useState<string>(defaultMessage)
 	return (
 		<section className="mx-auto md:max-w-screen-xl bg-navy">
 			<div className="flex flex-col justify-center md:flex-row">
