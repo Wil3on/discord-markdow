@@ -19,7 +19,11 @@ const defaultMessage: string = `1. *italics*
 code blocks\`\`\`
 11. 
 > single-line blockquote
-12. 
+12.
+\`\`\`diff
+- Red Heighlighting
+\`\`\`
+13. 
 >>> multiline
 blockquotes`
 
@@ -41,7 +45,7 @@ export const MarkdownEditor: React.VFC = () => {
 				<div className="flex-1 max-w-5xl m-3">
 					<div className="flex p-4 rounded-lg bg-navy-light text-while ">
 						<FaUserCircle size={40} className="text-gray min-w-[40px]" />
-						<div className="ml-3">
+						<div className="w-full ml-3">
 							<h4 className="text-xl font-light">
 								you
 								<span className="ml-2 text-sm text-gray-light">Today at 11:30 PM</span>
