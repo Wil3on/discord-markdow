@@ -15,6 +15,10 @@ const defaultMessage: string = `
 [ Orange Highlighting ]
 \`\`\`
 3.
+\`\`\`diff
++ Light Green Highlighting
+\`\`\`
+4.
 \`\`\`fix
 Yellow Highlighting
 \`\`\``
