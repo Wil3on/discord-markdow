@@ -3,7 +3,14 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		colors: {
-			blue: '#7289da',
+			red: '#D43231',
+			blue: {
+				DEFAULT: '#7289da',
+				light: '#32A098',
+				dark: '#2E8AD2',
+			},
+			yellow: '#AE850A',
+			orange: '#C14B1D',
 			while: '#fff',
 			dark: {
 				DEFAULT: '#292B30',
@@ -13,7 +20,10 @@ module.exports = {
 				DEFAULT: '#C4C4C4',
 				light: '#686B74',
 			},
-			green: '#248000',
+			green: {
+				DEFAULT: '#248000',
+				light: '#839506',
+			},
 			navy: {
 				DEFAULT: '#36393F',
 				light: '#40444C',

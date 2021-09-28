@@ -5,23 +5,31 @@ import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 
-const defaultMessage: string = `1. *italics*
-2. **bold**
-3. ***bold italics***
-4. __underline__
-5. __*underline italics*__
-6. __**underline bold**__
-7. __***underline bold italics***__
-8. ~~Strikethrough~~
-9. \`one-line code blocks\`
-10. 
-\`\`\`multiline
-code blocks\`\`\`
-11. 
-> single-line blockquote
-12. 
->>> multiline
-blockquotes`
+const defaultMessage: string = `
+1.
+\`\`\`diff
+- Red Highlighting
+\`\`\`
+2.
+\`\`\`css
+[ Orange Highlighting ]
+\`\`\`
+3.
+\`\`\`diff
++ Light Green Highlighting
+\`\`\`
+4.
+\`\`\`bash
+" Light Blue Highlighting "
+\`\`\`
+5.
+\`\`\`ini
+[ Dark Blue Highlighting ]
+\`\`\`
+6.
+\`\`\`fix
+Yellow Highlighting
+\`\`\``
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
@@ -41,7 +49,7 @@ export const MarkdownEditor: React.VFC = () => {
 				<div className="flex-1 max-w-5xl m-3">
 					<div className="flex p-4 rounded-lg bg-navy-light text-while ">
 						<FaUserCircle size={40} className="text-gray min-w-[40px]" />
-						<div className="ml-3">
+						<div className="w-full ml-3">
 							<h4 className="text-xl font-light">
 								you
 								<span className="ml-2 text-sm text-gray-light">Today at 11:30 PM</span>
