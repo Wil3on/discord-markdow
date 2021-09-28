@@ -23,6 +23,10 @@ const defaultMessage: string = `
 " Light Blue Highlighting "
 \`\`\`
 5.
+\`\`\`ini
+[ Dark Blue Highlighting ]
+\`\`\`
+6.
 \`\`\`fix
 Yellow Highlighting
 \`\`\``

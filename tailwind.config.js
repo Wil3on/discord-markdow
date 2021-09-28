@@ -7,6 +7,7 @@ module.exports = {
 			blue: {
 				DEFAULT: '#7289da',
 				light: '#32A098',
+				dark: '#2E8AD2',
 			},
 			yellow: '#AE850A',
 			orange: '#C14B1D',

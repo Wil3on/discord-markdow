@@ -33,6 +33,10 @@ const convertDiscordMarkdown = (message: string) => {
 			'<span className="inline-block w-full px-3 py-2 rounded border-3 text-orange bg-dark-light border-dark">$1</span>'
 		) // Orange Highlighting 🟧
 		.replace(
+			/\`\`\`ini\n((\[.*\]|\n)*)\n\`\`\`/gm,
+			'<span className="inline-block w-full px-3 py-2 rounded border-3 text-blue-dark bg-dark-light border-dark">$1</span>'
+		) // Dark Blue Highlighting 🟦
+		.replace(
 			/\`\`\`((.|\n)*)\`\`\`/gim,
 			'<span className="inline-block w-full px-3 py-2 rounded border-3 bg-dark-light border-dark ">$1</span>'
 		) // multi-line blockcode
