@@ -4,7 +4,10 @@ module.exports = {
 	theme: {
 		colors: {
 			red: '#D43231',
-			blue: '#7289da',
+			blue: {
+				DEFAULT: '#7289da',
+				light: '#32A098',
+			},
 			yellow: '#AE850A',
 			orange: '#C14B1D',
 			while: '#fff',

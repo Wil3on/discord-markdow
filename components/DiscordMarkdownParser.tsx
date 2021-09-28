@@ -25,6 +25,10 @@ const convertDiscordMarkdown = (message: string) => {
 			'<span className="inline-block w-full px-3 py-2 rounded border-3 text-yellow bg-dark-light border-dark">$1</span>'
 		) // Yellow Highlighting 🟨
 		.replace(
+			/\`\`\`bash\n((\".*\"|\n)*)\n\`\`\`/gm,
+			'<span className="inline-block w-full px-3 py-2 rounded border-3 text-blue-light bg-dark-light border-dark">$1</span>'
+		) // Light Blue Highlighting 🦋
+		.replace(
 			/\`\`\`css\n((\[.*\]|\n)*)\n\`\`\`/gm,
 			'<span className="inline-block w-full px-3 py-2 rounded border-3 text-orange bg-dark-light border-dark">$1</span>'
 		) // Orange Highlighting 🟧

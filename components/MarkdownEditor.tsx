@@ -19,6 +19,10 @@ const defaultMessage: string = `
 + Light Green Highlighting
 \`\`\`
 4.
+\`\`\`bash
+" Light Blue Highlighting "
+\`\`\`
+5.
 \`\`\`fix
 Yellow Highlighting
 \`\`\``
