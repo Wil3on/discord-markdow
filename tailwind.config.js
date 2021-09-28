@@ -5,6 +5,7 @@ module.exports = {
 		colors: {
 			red: '#D43231',
 			blue: '#7289da',
+			yellow: '#AE850A',
 			while: '#fff',
 			dark: {
 				DEFAULT: '#292B30',
