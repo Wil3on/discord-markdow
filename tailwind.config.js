@@ -6,6 +6,7 @@ module.exports = {
 			red: '#D43231',
 			blue: '#7289da',
 			yellow: '#AE850A',
+			orange: '#C14B1D',
 			while: '#fff',
 			dark: {
 				DEFAULT: '#292B30',
