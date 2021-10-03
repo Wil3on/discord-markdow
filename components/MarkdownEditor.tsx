@@ -39,7 +39,7 @@ export const MarkdownEditor: React.VFC = () => {
 				<div className="flex flex-1 max-w-5xl px-4 py-6 m-3 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
 					<TextareaAutosize
-						className="w-full pt-1 mx-3 overflow-y-hidden text-xl outline-none bg-navy-light text-while placeholder-gray-light"
+						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
 						placeholder="Message"
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
@@ -47,7 +47,7 @@ export const MarkdownEditor: React.VFC = () => {
 					<ClipboardCopyButton message={message} />
 				</div>
 				<div className="flex-1 max-w-5xl m-3">
-					<div className="flex p-4 rounded-lg bg-navy-light text-while ">
+					<div className="flex p-4 text-white rounded-lg bg-navy-light ">
 						<FaUserCircle size={40} className="text-gray min-w-[40px]" />
 						<div className="w-full ml-3">
 							<h4 className="text-xl font-light">
