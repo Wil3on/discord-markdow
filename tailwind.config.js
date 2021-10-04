@@ -11,7 +11,7 @@ module.exports = {
 			},
 			yellow: '#AE850A',
 			orange: '#C14B1D',
-			while: '#fff',
+			white: '#fff',
 			dark: {
 				DEFAULT: '#292B30',
 				light: '#2F3136',
