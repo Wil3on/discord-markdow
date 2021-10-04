@@ -34,9 +34,9 @@ Yellow Highlighting
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
 	return (
-		<section className="mx-auto md:max-w-screen-xl bg-navy">
+		<section className="px-10 pt-5 mx-auto md:max-w-screen-xl bg-navy">
 			<div className="flex flex-col justify-center md:flex-row">
-				<div className="flex flex-1 max-w-5xl px-4 py-6 m-3 rounded-lg bg-navy-light">
+				<div className="flex flex-1 max-w-5xl px-4 py-6 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
 					<TextareaAutosize
 						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
@@ -46,7 +46,7 @@ export const MarkdownEditor: React.VFC = () => {
 					/>
 					<ClipboardCopyButton message={message} />
 				</div>
-				<div className="flex-1 max-w-5xl m-3">
+				<div className="flex-1 max-w-5xl mt-5 md:ml-5 md:mt-0">
 					<div className="flex p-4 text-white rounded-lg bg-navy-light ">
 						<FaUserCircle size={40} className="text-gray min-w-[40px]" />
 						<div className="w-full ml-3">
