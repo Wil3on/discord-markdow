@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { MarkdownEditor } from '../components/MarkdownEditor'
 import { Section } from '../components/Section'
 import { FaDiscord } from 'react-icons/fa'
+import { Card } from '../components/Card'
 
 const Home: NextPage = () => {
 	return (
@@ -22,6 +23,9 @@ const Home: NextPage = () => {
 					always 100% sure if the markdown will output the way I want it to be. So, I needed something to preview my
 					markdown before submitting it.
 				</p>
+			</Section>
+			<Section heading="Feature">
+				<Card />
 			</Section>
 		</>
 	)
