@@ -26,18 +26,35 @@ const Home: NextPage = () => {
 				</p>
 			</Section>
 			<Section heading="Feature">
-				<div className="pt-5" />
+				<div className="pt-7" />
 				<CardGrid>
+					<Card input={'*Italics*'} />
+					<Card input={'**Bold**'} />
+					<Card input={'__Underline__'} />
+					<Card input={'~~Strikethrough~~'} />
+					<Card input={'***Bold Italics***'} />
+					<Card input={`>Block Quotes`} />
+					<Card input={'***Bold Italics***'} />
 					<Card
-						output="- Red Highlighting"
-						outputStyle="text-red"
-						input={`\`\`\`diff<br>
-- Red Highlighting<br>
+						input={`\`\`\`diff
+- Red 
 \`\`\``}
 					/>
-					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
-					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
-					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+					<Card
+						input={`\`\`\`css
+[ Orange ]
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`diff
++ Light Green 
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`ini
+[ Dark Blue ]
+\`\`\``}
+					/>
 				</CardGrid>
 			</Section>
 		</>
