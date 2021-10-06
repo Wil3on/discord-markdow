@@ -3,6 +3,7 @@ import { MarkdownEditor } from '../components/MarkdownEditor'
 import { Section } from '../components/Section'
 import { FaDiscord } from 'react-icons/fa'
 import { Card } from '../components/Card'
+import { CardGrid } from '../components/CardGrid'
 
 const Home: NextPage = () => {
 	return (
@@ -25,7 +26,13 @@ const Home: NextPage = () => {
 				</p>
 			</Section>
 			<Section heading="Feature">
-				<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+				<div className="pt-5" />
+				<CardGrid>
+					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+				</CardGrid>
 			</Section>
 		</>
 	)
