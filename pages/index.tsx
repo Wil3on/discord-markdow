@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import { MarkdownEditor } from '../components/MarkdownEditor'
 import { Section } from '../components/Section'
 import { FaDiscord } from 'react-icons/fa'
+import { Card } from '../components/Card'
+import { CardGrid } from '../components/CardGrid'
 
 const Home: NextPage = () => {
 	return (
@@ -22,6 +24,38 @@ const Home: NextPage = () => {
 					always 100% sure if the markdown will output the way I want it to be. So, I needed something to preview my
 					markdown before submitting it.
 				</p>
+			</Section>
+			<Section heading="Feature">
+				<div className="pt-7" />
+				<CardGrid>
+					<Card input={'*Italics*'} />
+					<Card input={'**Bold**'} />
+					<Card input={'__Underline__'} />
+					<Card input={'~~Strikethrough~~'} />
+					<Card input={'***Bold Italics***'} />
+					<Card input={`>Block Quotes`} />
+					<Card input={'***Bold Italics***'} />
+					<Card
+						input={`\`\`\`diff
+- Red 
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`css
+[ Orange ]
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`diff
++ Light Green 
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`ini
+[ Dark Blue ]
+\`\`\``}
+					/>
+				</CardGrid>
 			</Section>
 		</>
 	)

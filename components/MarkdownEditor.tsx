@@ -6,27 +6,29 @@ import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 
 const defaultMessage: string = `
-1.
+1. 
+*Italic Bold*
+2.
 \`\`\`diff
 - Red Highlighting
 \`\`\`
-2.
+3.
 \`\`\`css
 [ Orange Highlighting ]
 \`\`\`
-3.
+4.
 \`\`\`diff
 + Light Green Highlighting
 \`\`\`
-4.
+5.
 \`\`\`bash
 " Light Blue Highlighting "
 \`\`\`
-5.
+6.
 \`\`\`ini
 [ Dark Blue Highlighting ]
 \`\`\`
-6.
+7.
 \`\`\`fix
 Yellow Highlighting
 \`\`\``
