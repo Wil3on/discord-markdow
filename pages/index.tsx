@@ -28,7 +28,13 @@ const Home: NextPage = () => {
 			<Section heading="Feature">
 				<div className="pt-5" />
 				<CardGrid>
-					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
+					<Card
+						output="- Red Highlighting"
+						outputStyle="text-red"
+						input={`\`\`\`diff<br>
+- Red Highlighting<br>
+\`\`\``}
+					/>
 					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
 					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
 					<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
