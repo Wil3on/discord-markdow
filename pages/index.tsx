@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 				</p>
 			</Section>
 			<Section heading="Feature">
-				<Card />
+				<Card output="- Red Highlighting" outputStyle="text-red" input="```diff<br>- Red Highlighting<br> ```" />
 			</Section>
 		</>
 	)
