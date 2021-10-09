@@ -1,15 +1,13 @@
-import { SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
 import AutoTextarea from 'react-textarea-autosize'
 import ReactTextareaAutocomplete from '@webscopeio/react-textarea-autocomplete'
-import TextareaAutosize from 'react-autosize-textarea'
-
 import React from 'react'
 
-const defaultMessage: string = `hello`
+const defaultMessage: string = ''
 
 type ItemProps = {
 	entity: {
@@ -24,7 +22,9 @@ type LoadingProps = {
 
 const Loading = ({ data }: LoadingProps) => <div>Loading</div>
 
-const Item = ({ entity: { name, char } }: ItemProps) => <div className="bg-white ">{`${name}: ${char}`}</div>
+const Item = ({ entity: { name, char } }: ItemProps) => (
+	<div className="p-2 bg-white border-b-2 border-solid border-gray ">{`${name}: ${char}`}</div>
+)
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
@@ -37,16 +37,48 @@ export const MarkdownEditor: React.VFC = () => {
 						onChange={(e) => setMessage(e.target.value)}
 						placeholder="Message"
 						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
-						// textAreaComponent={{ component: AutoTextarea, ref: `${message}` }}
+						textAreaComponent={AutoTextarea}
 						loadingComponent={Loading}
-						containerStyle={{ flexGrow: 1, height: 600 }}
+						containerStyle={{ flexGrow: 1 }}
 						trigger={{
 							'*': {
 								dataProvider: (token) => {
 									return [
-										{ name: 'italic', char: `*${token}*` },
-										{ name: 'bold', char: `**${token}**` },
+										{ name: 'Italics', char: `*${token}*` },
+										{ name: 'Bold', char: `**${token}**` },
+										{ name: 'Bold Italics', char: `***${token}***` },
 									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'**': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'bold', char: `*${token}**` },
+										{ name: 'Bold Italics', char: `**${token}***` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							_: {
+								dataProvider: (token) => {
+									return [{ name: 'underline', char: `__${token}__` }]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'~': {
+								dataProvider: (token) => {
+									return [{ name: 'Strikethrough', char: `~~${token}~~` }]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'***': {
+								dataProvider: (token) => {
+									return [{ name: 'Bold Italics', char: `*${token}***` }]
 								},
 								component: Item,
 								output: (item: { char }, trigger) => item.char,
