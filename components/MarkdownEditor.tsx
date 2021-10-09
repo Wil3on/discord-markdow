@@ -23,7 +23,7 @@ type LoadingProps = {
 const Loading = ({ data }: LoadingProps) => <div>Loading</div>
 
 const Item = ({ entity: { name, char } }: ItemProps) => (
-	<div className="p-2 bg-white border-b-2 border-solid border-gray ">{`${name}: ${char}`}</div>
+	<div className="p-2 bg-white border-b-2 border-solid border-gray">{`${name}: ${char}`}</div>
 )
 
 export const MarkdownEditor: React.VFC = () => {
@@ -79,6 +79,30 @@ export const MarkdownEditor: React.VFC = () => {
 							'***': {
 								dataProvider: (token) => {
 									return [{ name: 'Bold Italics', char: `*${token}***` }]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'>': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Block Quotes', char: `>${token}` },
+										{ name: 'Multi-line Block Quotes', char: `>>>${token}` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'>>': {
+								dataProvider: (token) => {
+									return [{ name: 'Multi-line Block Quotes', char: `>>${token}` }]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'>>>': {
+								dataProvider: (token) => {
+									return [{ name: 'Multi-line Block Quotes', char: `>>>${token}` }]
 								},
 								component: Item,
 								output: (item: { char }, trigger) => item.char,
