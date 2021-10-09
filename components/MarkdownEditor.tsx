@@ -86,6 +86,30 @@ export const MarkdownEditor: React.VFC = () => {
 									return [
 										{ name: 'Code Blocks', char: `\`${token}\`` },
 										{ name: 'Multi-line Code Blocks', char: `\`\`\`${token}\`\`\`` },
+										{
+											name: 'Red Text',
+											char: `\`\`\`diff\n-${token}\n\`\`\``,
+										},
+										{
+											name: 'Orange Text',
+											char: `\`\`\`css\n[${token}]\n\`\`\``,
+										},
+										{
+											name: 'Light Green Text',
+											char: `\`\`\`diff\n+${token}\n\`\`\``,
+										},
+										{
+											name: 'Dark Blue Text',
+											char: `\`\`\`ini\n[${token}]\n\`\`\``,
+										},
+										{
+											name: 'Yellow Text',
+											char: `\`\`\`fix\n${token}\n\`\`\``,
+										},
+										{
+											name: 'Light Blue Text',
+											char: `\`\`\`bash\n"${token}"\n\`\`\``,
+										},
 									]
 								},
 								component: Item,
