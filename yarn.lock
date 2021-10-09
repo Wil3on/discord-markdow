@@ -427,6 +427,14 @@
     "@typescript-eslint/types" "4.29.3"
     eslint-visitor-keys "^2.0.0"
 
+"@webscopeio/react-textarea-autocomplete@^4.8.0":
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/@webscopeio/react-textarea-autocomplete/-/react-textarea-autocomplete-4.8.0.tgz#3de4e9c8a751990e70011d56a46276c5cf9f88dd"
+  integrity sha512-/jo0nSof/MD0hk7x/X7ILOjI64D4AhLD78Oe6+VpA1wF8gG6rPr82BZd/8ydZonq6XM1CCB+wF1lAkr5b1Mh4A==
+  dependencies:
+    custom-event "^1.0.1"
+    textarea-caret "3.0.2"
+
 JSONStream@^1.0.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -655,6 +663,11 @@ autoprefixer@^10.3.3:
     fraction.js "^4.1.1"
     normalize-range "^0.1.2"
     postcss-value-parser "^4.1.0"
+
+autosize@^4.0.2:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/autosize/-/autosize-4.0.4.tgz#924f13853a466b633b9309330833936d8bccce03"
+  integrity sha512-5yxLQ22O0fCRGoxGfeLSNt3J8LB1v+umtpMnPW6XjkTWXKoN0AmXAIhelJcDtFT/Y/wYWmfE+oqU10Q0b8FhaQ==
 
 available-typed-arrays@^1.0.4:
   version "1.0.4"
@@ -1072,6 +1085,11 @@ compare-func@^2.0.0:
     array-ify "^1.0.0"
     dot-prop "^5.1.0"
 
+computed-style@~0.1.3:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/computed-style/-/computed-style-0.1.4.tgz#7f344fd8584b2e425bedca4a1afc0e300bb05d74"
+  integrity sha1-fzRP2FhLLkJb7cpKGvwOMAuwXXQ=
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
@@ -1230,6 +1248,11 @@ csstype@^3.0.2:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
   integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
+
+custom-event@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.1.tgz#5d02a46850adf1b4a317946a3928fccb5bfd0425"
+  integrity sha1-XQKkaFCt8bSjF5RqOSj8y1v9BCU=
 
 cz-conventional-changelog@3.2.0:
   version "3.2.0"
@@ -2755,6 +2778,13 @@ lilconfig@^2.0.3:
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.3.tgz#68f3005e921dafbd2a2afb48379986aa6d2579fd"
   integrity sha512-EHKqr/+ZvdKCifpNrJCKxBTgk5XupZA3y/aCPY9mxfgBzmgh93Mt/WqjjQ38oMxXuvDokaKiM3lAgvSH2sjtHg==
 
+line-height@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/line-height/-/line-height-0.3.1.tgz#4b1205edde182872a5efa3c8f620b3187a9c54c9"
+  integrity sha1-SxIF7d4YKHKl76PI9iCzGHqcVMk=
+  dependencies:
+    computed-style "~0.1.3"
+
 lines-and-columns@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
@@ -3580,7 +3610,7 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-prop-types@^15.7.2:
+prop-types@^15.5.6, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -3692,6 +3722,15 @@ raw-body@2.4.1:
     http-errors "1.7.3"
     iconv-lite "0.4.24"
     unpipe "1.0.0"
+
+react-autosize-textarea@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-autosize-textarea/-/react-autosize-textarea-7.1.0.tgz#902c84fc395a689ca3a484dfb6bc2be9ba3694d1"
+  integrity sha512-BHpjCDkuOlllZn3nLazY2F8oYO1tS2jHnWhcjTWQdcKiiMU6gHLNt/fzmqMSyerR0eTdKtfSIqtSeTtghNwS+g==
+  dependencies:
+    autosize "^4.0.2"
+    line-height "^0.3.1"
+    prop-types "^15.5.6"
 
 react-dom@17.0.2:
   version "17.0.2"
@@ -4448,6 +4487,11 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+textarea-caret@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/textarea-caret/-/textarea-caret-3.0.2.tgz#f360c48699aa1abf718680a43a31a850665c2caf"
+  integrity sha1-82DEhpmqGr9xhoCkOjGoUGZcLK8=
 
 through2@^4.0.0:
   version "4.0.2"

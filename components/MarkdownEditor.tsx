@@ -1,37 +1,30 @@
 import { useState } from 'react'
-import TextareaAutosize from 'react-textarea-autosize'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
+import AutoTextarea from 'react-textarea-autosize'
+import ReactTextareaAutocomplete from '@webscopeio/react-textarea-autocomplete'
+import React from 'react'
 
-const defaultMessage: string = `
-1. 
-*Italic Bold*
-2.
-\`\`\`diff
-- Red Highlighting
-\`\`\`
-3.
-\`\`\`css
-[ Orange Highlighting ]
-\`\`\`
-4.
-\`\`\`diff
-+ Light Green Highlighting
-\`\`\`
-5.
-\`\`\`bash
-" Light Blue Highlighting "
-\`\`\`
-6.
-\`\`\`ini
-[ Dark Blue Highlighting ]
-\`\`\`
-7.
-\`\`\`fix
-Yellow Highlighting
-\`\`\``
+const defaultMessage: string = ''
+
+type ItemProps = {
+	entity: {
+		name: string
+		char: string
+	}
+}
+
+type LoadingProps = {
+	data: Array<{ name: string; char: string }>
+}
+
+const Loading = ({ data }: LoadingProps) => <div>Loading</div>
+
+const Item = ({ entity: { name, char } }: ItemProps) => (
+	<div className="p-2 bg-white border-b-2 border-solid border-gray">{`${name}: ${char}`}</div>
+)
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
@@ -40,11 +33,89 @@ export const MarkdownEditor: React.VFC = () => {
 			<div className="flex flex-col justify-center md:flex-row">
 				<div className="flex flex-1 max-w-5xl px-4 py-6 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
-					<TextareaAutosize
-						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
-						placeholder="Message"
-						value={message}
+					<ReactTextareaAutocomplete
 						onChange={(e) => setMessage(e.target.value)}
+						placeholder="Message"
+						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
+						textAreaComponent={AutoTextarea}
+						loadingComponent={Loading}
+						containerStyle={{ flexGrow: 1 }}
+						trigger={{
+							'*': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Italics', char: `*${token}*` },
+										{ name: 'Bold', char: `**${token}**` },
+										{ name: 'Bold Italics', char: `***${token}***` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							_: {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Underline', char: `__${token}__` },
+										{ name: 'Underline Italics', char: `__*${token}*__` },
+										{ name: 'Underline Bold', char: `__**${token}**__` },
+										{ name: 'Underline Bold Italics', char: `__***${token}***__` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'~': {
+								dataProvider: (token) => {
+									return [{ name: 'Strikethrough', char: `~~${token}~~` }]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'>': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Block Quotes', char: `>${token}` },
+										{ name: 'Multi-line Block Quotes', char: `>>>${token}` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'`': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Code Blocks', char: `\`${token}\`` },
+										{ name: 'Multi-line Code Blocks', char: `\`\`\`${token}\`\`\`` },
+										{
+											name: 'Red Text',
+											char: `\`\`\`diff\n-${token}\n\`\`\``,
+										},
+										{
+											name: 'Orange Text',
+											char: `\`\`\`css\n[${token}]\n\`\`\``,
+										},
+										{
+											name: 'Light Green Text',
+											char: `\`\`\`diff\n+${token}\n\`\`\``,
+										},
+										{
+											name: 'Dark Blue Text',
+											char: `\`\`\`ini\n[${token}]\n\`\`\``,
+										},
+										{
+											name: 'Yellow Text',
+											char: `\`\`\`fix\n${token}\n\`\`\``,
+										},
+										{
+											name: 'Light Blue Text',
+											char: `\`\`\`bash\n"${token}"\n\`\`\``,
+										},
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+						}}
 					/>
 					<ClipboardCopyButton message={message} />
 				</div>
