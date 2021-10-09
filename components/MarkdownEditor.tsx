@@ -1,37 +1,30 @@
-import { useState } from 'react'
-import TextareaAutosize from 'react-textarea-autosize'
+import { SetStateAction, useState } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle } from 'react-icons/io'
 import { ClipboardCopyButton } from './ClipboardCopyButton'
 import { DiscordMarkdownParser } from './DiscordMarkdownParser'
+import AutoTextarea from 'react-textarea-autosize'
+import ReactTextareaAutocomplete from '@webscopeio/react-textarea-autocomplete'
+import TextareaAutosize from 'react-autosize-textarea'
 
-const defaultMessage: string = `
-1. 
-*Italic Bold*
-2.
-\`\`\`diff
-- Red Highlighting
-\`\`\`
-3.
-\`\`\`css
-[ Orange Highlighting ]
-\`\`\`
-4.
-\`\`\`diff
-+ Light Green Highlighting
-\`\`\`
-5.
-\`\`\`bash
-" Light Blue Highlighting "
-\`\`\`
-6.
-\`\`\`ini
-[ Dark Blue Highlighting ]
-\`\`\`
-7.
-\`\`\`fix
-Yellow Highlighting
-\`\`\``
+import React from 'react'
+
+const defaultMessage: string = `hello`
+
+type ItemProps = {
+	entity: {
+		name: string
+		char: string
+	}
+}
+
+type LoadingProps = {
+	data: Array<{ name: string; char: string }>
+}
+
+const Loading = ({ data }: LoadingProps) => <div>Loading</div>
+
+const Item = ({ entity: { name, char } }: ItemProps) => <div className="bg-white ">{`${name}: ${char}`}</div>
 
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
@@ -40,11 +33,25 @@ export const MarkdownEditor: React.VFC = () => {
 			<div className="flex flex-col justify-center md:flex-row">
 				<div className="flex flex-1 max-w-5xl px-4 py-6 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />
-					<TextareaAutosize
-						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
-						placeholder="Message"
-						value={message}
+					<ReactTextareaAutocomplete
 						onChange={(e) => setMessage(e.target.value)}
+						placeholder="Message"
+						className="w-full pt-1 mx-3 overflow-y-hidden text-xl text-white outline-none bg-navy-light placeholder-gray-light"
+						// textAreaComponent={{ component: AutoTextarea, ref: `${message}` }}
+						loadingComponent={Loading}
+						containerStyle={{ flexGrow: 1, height: 600 }}
+						trigger={{
+							'*': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'italic', char: `*${token}*` },
+										{ name: 'bold', char: `**${token}**` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+						}}
 					/>
 					<ClipboardCopyButton message={message} />
 				</div>
