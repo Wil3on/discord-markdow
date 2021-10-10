@@ -23,7 +23,7 @@ type LoadingProps = {
 const Loading = ({ data }: LoadingProps) => <div>Loading</div>
 
 const Item = ({ entity: { name, char } }: ItemProps) => (
-	<div className="p-2 bg-white border-b-2 border-solid border-gray">{`${name}: ${char}`}</div>
+	<div className="px-5 py-2 mt-0.5 text-sm text-white rounded-lg bg-dark hover:opacity-80">{`${name}: ${char}`}</div>
 )
 
 export const MarkdownEditor: React.VFC = () => {
