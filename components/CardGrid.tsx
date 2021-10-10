@@ -3,9 +3,5 @@ type CardGrid = {
 }
 
 export const CardGrid: React.VFC<CardGrid> = ({ children }) => {
-	return (
-		<div className="grid grid-cols-1 gap-5 place-items-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-			{children}
-		</div>
-	)
+	return <div className="grid gap-16 grid-cols-auto-fill">{children}</div>
 }

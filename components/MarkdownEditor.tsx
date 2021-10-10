@@ -29,7 +29,7 @@ const Item = ({ entity: { name, char } }: ItemProps) => (
 export const MarkdownEditor: React.VFC = () => {
 	const [message, setMessage] = useState<string>(defaultMessage)
 	return (
-		<section className="px-10 pt-5 mx-auto md:max-w-screen-xl bg-navy">
+		<section className="px-5 pt-5 mx-auto md:max-w-screen-xl bg-navy">
 			<div className="flex flex-col justify-center md:flex-row">
 				<div className="flex flex-1 max-w-5xl px-4 py-6 rounded-lg bg-navy-light">
 					<IoMdAddCircle size={35} className="text-gray" />

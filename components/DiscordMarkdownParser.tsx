@@ -38,12 +38,12 @@ const convertDiscordMarkdown = (message: string) => {
 		) // Dark Blue Highlighting 🟦
 		.replace(
 			/\`\`\`((.|\n)*)\`\`\`/gim,
-			'<span className="inline-block w-full px-3 py-2 rounded border-3 bg-dark-light border-dark ">$1</span>'
+			'<span className="inline-block w-full px-3 py-2 rounded border-3 bg-gray-dark border-dark ">$1</span>'
 		) // multi-line blockcode
-		.replace(/\`(.*?)\`/gim, '<span className="p-1 rounded bg-dark-light">$1</span>') // blockcode
+		.replace(/\`(.*?)\`/gim, '<span className="p-1 rounded bg-gray-dark">$1</span>') // blockcode
 		.replace(
 			/\>\>\>((.|\n)*)/gim,
-			'<backquote className="inline-block px-3 py-2 pl-2 border-l-4 border-gray-light ">$1</backquote>'
+			'<backquote className="inline-block px-3 py-2 pl-2 border-l-4 border-gray-light">$1</backquote>'
 		) // multi-line blockquote
 		.replace(/^\>(.*$)/gim, '<backquote className="inline-block pl-2 border-l-4 border-gray-light">$1</backquote>') // single-line blockquote
 	return markdownedMessage

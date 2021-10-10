@@ -17,6 +17,7 @@ module.exports = {
 				light: '#2F3136',
 			},
 			gray: {
+				dark: '#282A30',
 				DEFAULT: '#C4C4C4',
 				light: '#686B74',
 				exlight: '#3A3B3E',
@@ -33,6 +34,9 @@ module.exports = {
 		extend: {
 			height: {
 				content: 'max-content',
+			},
+			gridTemplateColumns: {
+				'auto-fill': 'repeat(auto-fit, minmax(220px, 1fr))',
 			},
 		},
 	},

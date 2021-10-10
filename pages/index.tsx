@@ -7,8 +7,8 @@ import { CardGrid } from '../components/CardGrid'
 
 const Home: NextPage = () => {
 	return (
-		<>
-			<header className="pt-10">
+		<div className="pt-10 pb-10">
+			<header>
 				<h1 className="flex flex-col items-center justify-center mb-1 md:mb-3 md:flex-row">
 					<FaDiscord size={40} className="text-blue" />
 					<span className="mt-1 text-lg font-bold text-white md:mt-0 md:ml-3 md:text-2xl">
@@ -30,14 +30,31 @@ const Home: NextPage = () => {
 				<CardGrid>
 					<Card input={'*Italics*'} />
 					<Card input={'**Bold**'} />
+					<Card input={'***Bold Italics***'} />
 					<Card input={'__Underline__'} />
+					<Card input={'__*Underline Italics*__'} />
+					<Card input={'__**Underline Bold**__'} />
+					<Card input={'__***Underline Bold Italics***__'} />
 					<Card input={'~~Strikethrough~~'} />
-					<Card input={'***Bold Italics***'} />
 					<Card input={`>Block Quotes`} />
+					<Card
+						input={`>>>Multiline
+Block Quotes`}
+					/>
 					<Card input={'***Bold Italics***'} />
+					<Card input={'`Code Blocks`'} />
+					<Card
+						input={`\`\`\`MultiLine
+Code Blocks\`\`\``}
+					/>
 					<Card
 						input={`\`\`\`diff
 - Red 
+\`\`\``}
+					/>
+					<Card
+						input={`\`\`\`fix
+Yellow
 \`\`\``}
 					/>
 					<Card
@@ -51,13 +68,18 @@ const Home: NextPage = () => {
 \`\`\``}
 					/>
 					<Card
+						input={`\`\`\`bash
+"Light Blue"
+\`\`\``}
+					/>
+					<Card
 						input={`\`\`\`ini
 [ Dark Blue ]
 \`\`\``}
 					/>
 				</CardGrid>
 			</Section>
-		</>
+		</div>
 	)
 }
 

@@ -7,8 +7,10 @@ type CardProps = {
 
 export const Card: React.VFC<CardProps> = ({ input }) => {
 	return (
-		<div className="shadow-md h-[250px] w-[210px] rounded-lg overflow-hidden md:h-[270px] md:w-[250px]">
-			<div className={`py-5 text-center md:py-7 md:text-xl bg-dark-light text-white `}>
+		<div className="overflow-hidden rounded-lg shadow-md h-[250px]">
+			<div
+				className={` text-center md:text-xl bg-dark-light text-white h-[85px] flex justify-center items-center px-5 py-3`}
+			>
 				<DiscordMarkdownParser message={input} />
 			</div>
 			<div className="flex flex-col justify-between px-5 py-5 md:px-5 md:py-6">
