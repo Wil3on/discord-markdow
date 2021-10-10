@@ -9,6 +9,36 @@ import { CardGrid } from '../components/CardGrid'
 const Home: NextPage = () => {
 	return (
 		<>
+			<Head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+				<title>Discord Markdown Live Previewer</title>
+
+				{/* Search Engine */}
+				<meta name="description" content="This is the Discord markdown editor with live preview." />
+				{/* Schema.org for Google */}
+				<meta itemProp="name" content="Discord Markdown Live Previewer" />
+				<meta itemProp="description" content="This is the Discord markdown editor with live preview." />
+				{/* Twitter */}
+				<meta name="twitter:card" content="summary" />
+				<meta name="twitter:title" content="Discord Markdown Live Previewer" />
+				<meta name="twitter:description" content="This is the Discord markdown editor with live preview." />
+				<meta name="twitter:image" content="/open-graph-logo.png" />
+				{/* Open Graph general (Facebook, Pinterest & Google+) */}
+				<meta property="og:title" content="Discord Markdown Live Previewer" />
+				<meta property="og:description" content="This is the Discord markdown editor with live preview." />
+				<meta property="og:url" content="https://discord-markdown-live-previewer.vercel.app/" />
+				<meta property="og:site_name" content="Discord Markdown Live Previewer" />
+				<meta property="og:type" content="website" />
+				<meta property="og:image" content="/open-graph-logo.png" />
+				<meta property="og:image:type" content="image/png" />
+				<meta property="og:image:width" content="512" />
+				<meta property="og:image:height" content="512" />
+
+				<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+			</Head>
+
 			<div className="px-2 pt-10 pb-10 md:px-4">
 				<header>
 					<h1 className="flex flex-col items-center justify-center mb-1 md:mb-3 md:flex-row">
