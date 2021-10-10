@@ -30,11 +30,23 @@ const Home: NextPage = () => {
 				<CardGrid>
 					<Card input={'*Italics*'} />
 					<Card input={'**Bold**'} />
+					<Card input={'***Bold Italics***'} />
 					<Card input={'__Underline__'} />
+					<Card input={'__*Underline Italics*__'} />
+					<Card input={'__**Underline Bold**__'} />
+					<Card input={'__***Underline Bold Italics***__'} />
 					<Card input={'~~Strikethrough~~'} />
-					<Card input={'***Bold Italics***'} />
 					<Card input={`>Block Quotes`} />
+					<Card
+						input={`>>>Multiline
+Block Quotes`}
+					/>
 					<Card input={'***Bold Italics***'} />
+					<Card input={'`Code Blocks`'} />
+					<Card
+						input={`\`\`\`MultiLine
+Code Blocks\`\`\``}
+					/>
 					<Card
 						input={`\`\`\`diff
 - Red 
