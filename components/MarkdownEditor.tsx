@@ -44,7 +44,6 @@ const triggersForAutocompletion = {
 			console.log('token:', token)
 			return [
 				{ name: 'Bold', char: `*${token}**` },
-				{ name: 'Bold Italics', char: `**${token}***` },
 			]
 		},
 		component: Item,
