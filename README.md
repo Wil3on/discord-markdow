@@ -5,7 +5,12 @@ I am not always 100% sure if the markdown will output the way I want it to be. S
 
 ## Try the demo
 
-### [here!](https://discord-markdown-live-previewer.vercel.app/)
+
+<a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/48965717/136706258-8fc3e964-ab08-4dc5-8081-788bdcef0a15.gif"><img src="https://user-images.githubusercontent.com/48965717/136706258-8fc3e964-ab08-4dc5-8081-788bdcef0a15.gif" alt="Oct-10-2021 10-13-14" style="max-width: 100%;"></a>
+
+## [here!](https://discord-markdown-live-previewer.vercel.app/)
+### *Please let me know if you found a bug or something you want me to implement
+
 ## Requirements
 - create a text editor and the output screen. 
 - add a clipboard copy button to the text editor so the user can paste it on discord.
@@ -30,8 +35,3 @@ I am not always 100% sure if the markdown will output the way I want it to be. S
 ### 🎨 [view on figma](https://www.figma.com/file/0sEeUFEWUzp7RvkNsGXQDy/Untitled?node-id=0%3A1)
 
 ## Stack
-
-- [Next.js](https://nextjs.org/)
-- [Typescript](https://www.typescriptlang.org/) 
-- [Tailwind](https://tailwindcss.com/)
-- [Vercel](https://vercel.com/)
