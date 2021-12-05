@@ -4,10 +4,8 @@ The reason behind creating this app is whenever I want to format my text on disc
 I am not always 100% sure if the markdown will output the way I want it to be. So, I needed something to preview my markdown before submitting it. 
 
 ## Try the demo
-WIP... 💪🥺 <br>
-#### Can't wait? [Here is the latest prototype ⭐️](https://discord-markdown-live-previewer.vercel.app/)<br>
-*Please let me know if you found a bug or something you want me to implement👍
 
+### [here!](https://discord-markdown-live-previewer.vercel.app/)
 ## Requirements
 - create a text editor and the output screen. 
 - add a clipboard copy button to the text editor so the user can paste it on discord.
