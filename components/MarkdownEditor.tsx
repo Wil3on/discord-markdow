@@ -52,6 +52,25 @@ export const MarkdownEditor: React.VFC = () => {
 								component: Item,
 								output: (item: { char }, trigger) => item.char,
 							},
+							'**': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Bold', char: `*${token}**` },
+										{ name: 'Bold Italics', char: `**${token}***` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'***': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Bold Italics', char: `*${token}***` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
 							_: {
 								dataProvider: (token) => {
 									return [
@@ -59,6 +78,15 @@ export const MarkdownEditor: React.VFC = () => {
 										{ name: 'Underline Italics', char: `__*${token}*__` },
 										{ name: 'Underline Bold', char: `__**${token}**__` },
 										{ name: 'Underline Bold Italics', char: `__***${token}***__` },
+									]
+								},
+								component: Item,
+								output: (item: { char }, trigger) => item.char,
+							},
+							'\_\_': {
+								dataProvider: (token) => {
+									return [
+										{ name: 'Underline', char: `_${token}__` },
 									]
 								},
 								component: Item,
