@@ -73,7 +73,6 @@ const Home: NextPage = () => {
 							input={`>>>Multiline
 Block Quotes`}
 						/>
-						<Card input={'***Bold Italics***'} />
 						<Card input={'`Code Blocks`'} />
 						<Card
 							input={`\`\`\`MultiLine
