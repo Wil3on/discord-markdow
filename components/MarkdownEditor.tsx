@@ -116,8 +116,8 @@ const triggersForAutocompletion = {
 	'>': {
 		dataProvider: (token) => {
 			return [
-				{ name: 'Block Quotes', char: `>${token}` },
-				{ name: 'Multi-line Block Quotes', char: `>>>${token}` },
+				{ name: 'Block Quotes', char: `> ${token}` },
+				{ name: 'Multi-line Block Quotes', char: `>>> ${token}` },
 			]
 		},
 		component: Item,
@@ -127,7 +127,7 @@ const triggersForAutocompletion = {
 		dataProvider: (token) => {
 			return [
 				{ name: 'Code Blocks', char: `\`${token}\`` },
-				{ name: 'Multi-line Code Blocks', char: `\`\`\`${token}\`\`\`` },
+				{ name: 'Multi-line Code Blocks', char: `\`\`\` ${token}\n\`\`\`` },
 				{
 					name: 'Red Text',
 					char: `\`\`\`diff\n-${token}\n\`\`\``,
