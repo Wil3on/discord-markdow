@@ -5,8 +5,17 @@ import { Section } from '../components/Section'
 import { FaDiscord } from 'react-icons/fa'
 import { Card } from '../components/Card'
 import { CardGrid } from '../components/CardGrid'
+import { useRef } from 'react'
 
 const Home: NextPage = () => {
+	const editorRef = useRef(null);
+
+	const insertCode = () => {
+		if (editorRef.current) {
+			editorRef.current.value += '\n```\nYour code here\n```\n';
+		}
+	};
+
 	return (
 		<>
 			<Head>
@@ -44,11 +53,14 @@ const Home: NextPage = () => {
 					<h1 className="flex flex-col items-center justify-center mb-1 md:mb-3 md:flex-row">
 						<FaDiscord size={40} className="text-blue" />
 						<span className="mt-1 text-lg font-bold text-white md:mt-0 md:ml-3 md:text-2xl">
-							Discord Markdown Live Previewer nuga
+							Discord Markdown Live Previewer
 						</span>
 					</h1>
 				</header>
-				<MarkdownEditor />
+				<button onClick={insertCode} className="mb-4 px-4 py-2 bg-blue-500 text-white rounded">
+					Insert Code
+				</button>
+				<MarkdownEditor ref={editorRef} />
 				<Section heading="About">
 					<p className="pt-2 text-base text-white">
 						This app will allow you to see the actual message you&apos;ll send on discord. The reason behind creating
