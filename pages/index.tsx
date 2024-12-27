@@ -5,13 +5,13 @@ import { Section } from '../components/Section'
 import { FaDiscord } from 'react-icons/fa'
 import { Card } from '../components/Card'
 import { CardGrid } from '../components/CardGrid'
-import { useRef } from 'react'
+import { useRef, MutableRefObject } from 'react'
 
 const Home: NextPage = () => {
-	const editorRef = useRef(null);
+	const editorRef = useRef<MutableRefObject<HTMLTextAreaElement | null>>(null);
 
 	const insertCode = () => {
-		if (editorRef.current) {
+		if (editorRef.current && editorRef.current.value !== undefined) {
 			editorRef.current.value += '\n```\nYour code here\n```\n';
 		}
 	};
