@@ -57,9 +57,6 @@ const Home: NextPage = () => {
 						</span>
 					</h1>
 				</header>
-				<button onClick={insertCode} className="mb-4 px-4 py-2 bg-blue-500 text-white rounded">
-					Insert Code
-				</button>
 				<MarkdownEditor ref={editorRef} />
 				<Section heading="About">
 					<p className="pt-2 text-base text-white">
@@ -71,6 +68,9 @@ const Home: NextPage = () => {
 				</Section>
 				<Section heading="Feature">
 					<div className="pt-7" />
+					<button onClick={insertCode} className="mb-4 px-4 py-2 bg-blue-500 text-white rounded">
+						Insert Code
+					</button>
 					<CardGrid>
 						<Card input={'*Italics*'} />
 						<Card input={'**Bold**'} />
